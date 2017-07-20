@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
 kind: Deployment
 metadata:
-  name: demo-app-prod
+  name: demo-app-cicd
 spec:
   replicas: 1
   template:
@@ -11,4 +11,4 @@ spec:
     spec:
       containers:
       - name: hello
-        image: devnetcicd/bar
+        image: devnetsandbox/CICD_Example
