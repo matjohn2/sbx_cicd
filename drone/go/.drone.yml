@@ -6,16 +6,16 @@ pipeline:
   publish:
     image: plugins/docker
     dockerfile: Dockerfile
-    username: devnetcicd
+    username: devnetsandbox
     password: cisco123
     email: devnetcicd@cisco.com
-    repo: devnetcicd/bar
+    repo: devnetsandbox/cicd_helloworld
     tags: latest
   deploy:
     image: quay.io/honestbee/drone-kubernetes
     kubernetes_server: http://10.10.20.1:8001
     kubernetes_token: 6323d4.d85d129e07132217
     namespace: default
-    deployment: demo-app-prod
-    repo: devnetcicd/bar
+    deployment: demo-app-cicd
+    repo: devnetsandbox/cicd_helloworld
     tag: latest
