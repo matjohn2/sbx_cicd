@@ -17,7 +17,7 @@ pipeline:
     namespace: default
     deployment: demo-app-cicd
     container: cicd-helloworld
-    repo: drone:drone:5000/cicd-helloworld
+    repo: drone:5000/cicd-helloworld
     registry: drone:5000
     insecure: true
     tag: latest
