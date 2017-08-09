@@ -11,8 +11,8 @@ pipeline:
     insecure: true
     tags: latest
   deploy:
-    image: quay.io/honestbee/drone-kubernetes
-    kubernetes_server: http://10.10.20.1:8001
+    image: devnetsandbox/kube
+    kubernetes_server: http://master:8001
     kubernetes_token: 6323d4.d85d129e07132217
     namespace: default
     deployment: demo-app-cicd
