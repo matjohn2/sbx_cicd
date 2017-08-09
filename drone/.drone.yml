@@ -9,7 +9,7 @@ pipeline:
   deploy:
     image:  devnetsandbox/kube
     kubernetes_server: http://master:8001
-    kubernetes_token: 6323d4.d85d129e07132217
+    kubernetes_token: <Your Kubernetes Token>
     namespace: default
     deployment: demo-app-cicd
     container: cicd-helloworld
