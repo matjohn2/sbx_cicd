@@ -37,7 +37,7 @@ for DEPLOY in ${DEPLOYMENTS[@]}; do
   echo Deploying to $KUBERNETES_SERVER
   #check deployment existing
   output=$(kubectl get deployment $DEPLOY 2>&1)
-  if [[ $output =~ .*found.* ]]; then
+  if [[ $output =~ .*not found.* ]]; then
     echo Creating deployment ${DEPLOY}
     kubectl create deployment ${DEPLOY} --image ${PLUGIN_REPO}:${PLUGIN_TAG} 
   fi
