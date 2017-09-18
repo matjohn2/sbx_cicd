@@ -37,9 +37,10 @@ for DEPLOY in ${DEPLOYMENTS[@]}; do
   echo Deploying to $KUBERNETES_SERVER
   #check deployment existing
   output=$(kubectl get deployment $DEPLOY 2>&1)
-  if [[ $output =~ .*not found.* ]]; then
+  if [[ $output =~ .*found.* ]]; then    
     echo Creating deployment ${DEPLOY}
-    kubectl create deployment ${DEPLOY} --image ${PLUGIN_REPO}:${PLUGIN_TAG} 
+    kubectl create deployment ${DEPLOY} --image ${PLUGIN_REPO}:${PLUGIN_TAG}
+    kubectl expose deployment ${DEPLOY} --type=NodePort --name=${DEPLOY} --port=80 --target-port=8080
   fi
    
   for CONTAINER in ${CONTAINERS[@]}; do
